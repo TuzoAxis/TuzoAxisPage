@@ -1,0 +1,465 @@
+/* Reset y reglas base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuente y base */
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Contenedor del header */
+.header-container, header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Contenido principal */
+.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Botón CTA */
+.cta-button {
+  background-color: #374151;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-button:hover {
+  background-color: #2563eb;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row; /* Uno al lado del otro */
+}
+
+/* Footer */
+footer {
+  background-color: #0f172a;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Bloque central */
+.bloque-central {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Alínea el contenido a la izquierda DENTRO del bloque */
+  margin: 0 auto;           /* Centra horizontalmente el bloque */
+  width: fit-content;       /* El ancho se ajusta al contenido */
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.emoji {
+  width: 30px;              /* Reservamos espacio para el emoji */
+  flex-shrink: 0;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.punto {
+  color: #000;        /* Puedes cambiarlo por otro color */
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.privacidad-lista {
+  padding-left: 20px;
+}
+
+.privacidad-lista li::marker {
+  color: #2b2b2b; /* Cambia el color de la viñeta */
+}
+
+.privacidad-lista li {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Enlaces */
+a {
+  color: #000000;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #333; /* más oscuro al pasar el mouse */
+  text-decoration: underline;
+}
+
+nav {
+  position: relative;
+}
+
+/* Menú principal */
+.menu,
+nav ul,
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Fondo sólido */
+}
+
+/* Hover effects */
+.menu a:hover {
+  color: #000;
+  background-color: #ffffff;
+}
+
+/* Submenú */
+.submenu,
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff; /* Fondo sólido */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  list-style: none;
+  min-width: 180px;
+  z-index: 9999;
+  padding: 10px 0;
+  transform: translateY(10px);
+  opacity: 1;           /* Asegura opacidad total */
+  visibility: visible;  /* Asegura visibilidad */
+}
+
+/* Mostrar submenu al hacer hover */
+.menu li:hover > .submenu,
+nav ul li:hover > ul {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;           /* Asegura opacidad total */
+  visibility: visible;  /* Asegura visibilidad */
+  background-color: #ffffff; /* Fondo sólido */
+}
+
+/* Tipografía general */
+h1 {
+  font-size: 2.5em;
+  color: #222;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+h2, h3 {
+  font-size: 1.5em;
+  color: #222;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Lora', serif;
+}
+
+p {
+  font-size: 1em;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  text-align: center;
+  margin-bottom: 0.50rem; /* reduce margen inferior general para los párrafos */
+}
+
+.titulo-principal {
+  font-size: 2.5em;
+  color: #222;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.boton {
+  display: inline-block;
+  background: #0077ff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background: #005ecc;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* Fondo sólido */
+}
+
+/* Logo */
+.logo, .logo-container img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Fondo sólido */
+}
+
+nav .nav-links li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  background-color: #ffffff; /* Fondo sólido */
+}
+
+nav .nav-links li a:hover {
+  color: #000;
+  border-bottom: 2px solid #555;
+  background-color: #ffffff; /* Fondo sólido */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Fondo sólido */
+}
+
+nav ul li {
+  background-color: #ffffff; /* Fondo sólido */
+  position: relative;
+}
+
+nav a {
+  background-color: #ffffff; /* Fondo sólido */
+  display: block;
+  padding: 14px 20px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Animaciones de entrada */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in-delayed {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* Animación para botones */
+.cta-button,
+.boton {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover,
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Mantener títulos centrados */
+.contenido-derecha h1,
+.contenido-derecha h2,
+.contenido-derecha h3 {
+  text-align: center;
+}
+
+/* Todo el texto dentro del contenido-izquierda (menos títulos) alineado a la izquierda */
+.contenido-derecha p,
+.contenido-derecha ul {
+  text-align: left;
+  max-width: 800px; /* para que no se expanda demasiado */
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Aseguramos que las listas no estén centradas */
+.contenido-derecha .privacidad-lista {
+  padding-left: 20px; /* Mantener la sangría estándar */
+}
+
+/* Opcional: para alinear mejor los ítems y no quede demasiado al borde */
+.contenido-derecha .privacidad-lista li {
+  text-align: left;
+}
+
+.texto-izquierda {
+  text-align: left;
+  max-width: 800px;  /* para que no sea muy ancho */
+  margin: 0 auto 1.5rem; /* centrado horizontal y margen abajo */
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header y logo */
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Menú en columna */
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: center; /* Opcional: centrado del menú también */
+    padding: 0;
+    justify-content: center;
+    text-align-last: center;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    width: 100%;
+    align-items: center;
+    max-width: 200px; /* opcional: evita que sea muy ancho */
+    justify-content: center; /* Centra el link dentro del li */
+  }
+
+  /* Títulos y textos */
+  .titulo-principal {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Botón responsivo */
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* Bloque central más flexible */
+  .bloque-central {
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .item {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .emoji {
+    margin-bottom: 5px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo {
+    max-width: 140px;
+    margin-bottom: 1rem;
+  }
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* <-- Aquí centramos todo lo que está dentro del nav */
+}
