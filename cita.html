@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Tuzo Axis | Consultora de Créditos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header animado -->
+  <header class="header-container fade-in">
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="img/logo_rec.jpg" alt="Tuzo Axis Logo" class="logo" />
+      </a>
+    </div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Conócenos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="cita.html">Agendar Cita</a></li>
+        <li><a href="privacidad.html">Aviso de Privacidad</a></li>
+      </ul>
+    </nav>
+  
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="fade-in-delayed">
+  <div class="content">
+    <h2>Bienvenido a nuestra consultora</h2>
+    <p>En Tuzo Axis te ayudamos a encontrar el crédito perfecto para ti. Analizamos tu perfil, tus necesidades y buscamos la mejor opción disponible en el mercado.</p>
+    <p>Podemos ayudarte a adquirir un credito para:</p>
+
+    <div class="bloque-central">
+      <div class="item"><span class="emoji">.</span><span class="emoji">🚗</span> Automovil </div>
+      <div class="item"><span class="emoji">.</span><span class="emoji">🏡</span> Vivienda </div>
+      <div class="item"><span class="emoji">.</span><span class="emoji">💼</span> Negocio </div>
+      <div class="item"><span class="emoji">.</span><span class="emoji">💵</span> Prestamo Personal </div>
+    </div>
+
+    <a href="#" class="cta-button" id="whatsapp-link">Agenda tu cita</a>
+  </div>
+  </main>
+
+  <script>
+    document.getElementById('whatsapp-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      const numero = '525572845070';
+      const mensaje = encodeURIComponent('Hola, quiero agendar una cita');
+    
+      // Detectar si es móvil
+      const esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+      let url = '';
+      if (esMovil) {
+        // Móvil usa wa.me
+        url = `https://wa.me/${numero}?text=${mensaje}`;
+      } else {
+        // PC usa whatsapp web con parámetros completos
+        url = `https://web.whatsapp.com/send/?phone=${numero}&text=${mensaje}&type=phone_number&app_absent=0`;
+      }
+    
+      window.open(url, '_blank');
+    });
+  </script>
+
+<!-- Footer -->
+  <footer class="fade-in-delayed">
+    © 2025 Tuzo Axis - Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

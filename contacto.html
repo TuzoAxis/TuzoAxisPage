@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Tuzo Axis | Consultora de Créditos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header animado -->
+  <header class="header-container fade-in">
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="img/logo_rec.jpg" alt="Tuzo Axis Logo" class="logo" />
+      </a>
+    </div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Conócenos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="cita.html">Agendar Cita</a></li>
+        <li><a href="privacidad.html">Aviso de Privacidad</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="fade-in-delayed">
+  <br><h1 class="titulo-principal">Llena tus datos para contactar con un asesor</h1>
+
+  <form id="contact-form" class="bloque-central">
+    <div class="item">
+      <span class="emoji">👤</span>
+      <input type="text" id="nombre" placeholder="Tu nombre" required />
+    </div>
+
+    <div class="item">
+      <span class="emoji">📧</span>
+      <input type="email" id="correo" placeholder="Tu correo" required />
+    </div>
+
+    <div class="item">
+      <span class="emoji">📱</span>
+      <input type="tel" id="telefono" placeholder="Tu teléfono" required />
+    </div>
+
+    <div class="item">
+      <span class="emoji">💬</span>
+      <textarea id="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+    </div>
+  </form>
+
+  <div class="button-container">
+    <button type="button" class="cta-button" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+    <button type="button" class="cta-button" onclick="enviarCorreo()">Enviar por Correo</button>
+  </div>
+</main>
+
+<script>
+  function obtenerDatos() {
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+    return { nombre, correo, telefono, mensaje };
+  }
+
+  function enviarWhatsApp() {
+    const { nombre, correo, telefono, mensaje } = obtenerDatos();
+
+    const numeroAsesor = "525572845070"; // Número real
+    const texto = `Hola, soy ${nombre}%0A📧 ${correo}%0A📱 ${telefono}%0A💬 ${mensaje}`;
+
+    // Detectar si es móvil
+    const esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    let url = '';
+    if (esMovil) {
+      // En móvil
+      url = `https://wa.me/${numeroAsesor}?text=${texto}`;
+    } else {
+      // En PC abrir WhatsApp Web
+      url = `https://web.whatsapp.com/send/?phone=${numeroAsesor}&text=${texto}&type=phone_number&app_absent=0`;
+    }
+
+    window.open(url, "_blank");
+  }
+
+  function enviarCorreo() {
+    const { nombre, correo, telefono, mensaje } = obtenerDatos();
+
+    const destinatario = "tuzoaxiscorporativo@gmail.com"; // Cambia por el correo destino
+    const asunto = encodeURIComponent("Nuevo contacto de " + nombre);
+    const cuerpo = encodeURIComponent(
+      `Nombre: ${nombre}\nCorreo: ${correo}\nTeléfono: ${telefono}\nMensaje: ${mensaje}`
+    );
+
+    const mailto = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
+    window.open(mailto, '_blank');
+  }
+</script>
+
+  <!-- Footer -->
+  <footer class="fade-in-delayed">
+    © 2025 Tuzo Axis - Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
